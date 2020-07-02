@@ -61,7 +61,7 @@ def count_words(file):
 
 def all_file_list():
     """ Produces list of files for reading in data, it's convenient to calculate genre length averages here before pre-processing """
-    
+
     global country_avg_len
     global hip_hop_avg_len
     global pop_avg_len
@@ -202,7 +202,8 @@ def main():
     test_files = file_list(test_folder)
 
     for file in test_files:
-        print(file+' - Category: ' + test(td, test_folder+file))
+        print(file)
+        print('    Category: ' + test(td, test_folder+file))
 
 if __name__ == '__main__':
     main()
