@@ -1,10 +1,3 @@
-
-#
-# Author: Joseph Wright
-#
-# Summary: Implement kNN to classify music genres of song lyric files
-#
-
 import copy
 import math
 import regex
