@@ -60,6 +60,8 @@ def count_words(file):
     return len(read.split())
 
 def all_file_list():
+    """ Produces list of files for reading in data, it's convenient to calculate genre length averages here before pre-processing """
+    
     global country_avg_len
     global hip_hop_avg_len
     global pop_avg_len

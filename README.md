@@ -42,16 +42,16 @@ Is there a way we could detect rhyming in hip-hop, for example? We could take a 
 are all very interesting and could be used to create a mapping of the relationships between song lyrics. There is no shortage of opportunity.
 
 ## References
-[1] "Dropping common terms: stop words." https://nlp.stanford.edu/IR-book/html/htmledition/dropping-common-terms-stop-words-1.html
+[1] "Dropping common terms: stop words." https://nlp.stanford.edu/IR-book/html/htmledition/dropping-common-terms-stop-words-1.html  
 [2] Ahmed Bou-Rabee, Keegan Go, Karanveer Mohan. 
     "Classifying the Subjective: Determining Genre of Music from Lyrics". 
-    http://cs229.stanford.edu/proj2012/BourabeeGoMohan-ClassifyingTheSubjectiveDeterminingGenreOfMusicFromLyrics.pdf
-[3] "Porter stemmer". http://people.scs.carleton.ca/~armyunis/projects/KAPI/porter.pdf
-[4] "Stemming". https://en.wikipedia.org/wiki/Stemming
+    http://cs229.stanford.edu/proj2012/BourabeeGoMohan-ClassifyingTheSubjectiveDeterminingGenreOfMusicFromLyrics.pdf  
+[3] "Porter stemmer". http://people.scs.carleton.ca/~armyunis/projects/KAPI/porter.pdf  
+[4] "Stemming". https://en.wikipedia.org/wiki/Stemming  
 [5] Nathan Thomas. "Using k-nearest neighbors to predict the genre of Spotify tracks". 
-    https://towardsdatascience.com/using-k-nearest-neighbours-to-predict-the-genre-of-spotify-tracks-796bbbad619f
+    https://towardsdatascience.com/using-k-nearest-neighbours-to-predict-the-genre-of-spotify-tracks-796bbbad619f  
 [6] Thushan Ganegedata. "Intuitive Guide to Understanding GloVe Embeddings" 
-    https://towardsdatascience.com/light-on-math-ml-intuitive-guide-to-understanding-glove-embeddings-b13b4f19c010
+    https://towardsdatascience.com/light-on-math-ml-intuitive-guide-to-understanding-glove-embeddings-b13b4f19c010  
 [7] Sunil Ray. "6 Easy Steps to Learn Naive Bayes Algorithm with codes in Python and R". 
-    https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+    https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/  
 [8] "GloVe (machine learning)." https://en.wikipedia.org/wiki/GloVe_(machine_learning)
