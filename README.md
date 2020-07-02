@@ -1,11 +1,12 @@
 # Music Genre Classification Using Song Lyrics and kNN
 
+<br/>
+
 ## Abstract
 This project uses a custom kNN algorithm in an attempt to classify the genre of a song based on the text of the lyrics. Given a text file of song lyrics, we compare attributes of this song to a set of example songs from popular music genres. The main idea is that since music genres share motifs in their lyrical content, that we could therefore classify the genre of a song by comparing the words in their lyrics between the example and other classified songs. We show a technique to isolate keywords in a song using word stemming and how to measure the 'closeness' of two songs using word vectors, among other metrics.
 
 ## Training Data
-The number of genres to use, the specific genre, and the genre examples were all arbitrarily selected from song lyric websites that already classified the genre (). The sample size is very small, with n=10 per genre. Each sub-folder name in this directory is the 'label' attached to each song. Each song is stored in a text file with its track title and artist name. Summary statistics 
-are calculated about each genre using the files in the genre folders.
+The number of genres to use, the specific genre, and the genre examples were all arbitrarily selected from song lyric websites like genius.com or lyrics.com that already classified the genre. The sample size is very small, with n=10 per genre. Each sub-folder name in this directory is the 'label' attached to each song. Each song is stored in a text file with its track title and artist name. Summary statistics are calculated about each genre using the files in the genre folders.
 
 ## Algorithm
 This kNN implementation utilizes the Euclidean distance between a song and points in n-dimensional space with a word count penalty. 
