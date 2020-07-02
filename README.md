@@ -1,8 +1,6 @@
 # Music Genre Classification Using Song Lyrics and kNN
 Joseph Wright  
-7/2/2020
-
-<br/>
+7/2/2020  
 
 ## Abstract
 This project uses a custom kNN algorithm in an attempt to classify the genre of a song based on the text of the lyrics. Given a text file of song lyrics, we compare attributes of this song to a set of example songs from popular music genres. The main idea is that since music genres share motifs in their lyrical content, that we could therefore classify the genre of a song by comparing the words in their lyrics between the example and other classified songs. We show a technique to isolate keywords in a song using word stemming and how to measure the 'closeness' of two songs using word vectors, among other metrics.
