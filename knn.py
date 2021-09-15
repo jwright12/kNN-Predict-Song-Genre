@@ -191,8 +191,6 @@ def test(training_data, txt_file):
     return result
 
 def main():
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
     td = load_training_data()
     test_files = file_list(test_folder)
 
