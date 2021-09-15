@@ -1,7 +1,9 @@
 # Music Genre Classification Using Song Lyrics and kNN
 Joseph Wright  
+CS 366  
+Dr. Shimin Li  
 7/2/2020  
-
+  
 ## Abstract
 This project uses a custom kNN algorithm in an attempt to classify the genre of a song based on the text of the lyrics. Given a text file of song lyrics, we compare attributes of this song to a set of example songs from popular music genres. The main idea is that since music genres share motifs in their lyrical content, that we could therefore classify the genre of a song by comparing the words in their lyrics between the example and other classified songs. We show a technique to isolate keywords in a song using word stemming and how to measure the 'closeness' of two songs using word vectors, among other metrics.
 
@@ -25,7 +27,7 @@ With pre-processing done, we plot the stemmed, stop-word free version of our tes
 the classified point containing the entire training lexicon and the test song word frequencies. We created a distance penalty for songs by subtracting the genres average word count from the test songs word count and squaring it. This will push songs away from each other if there is a significant miss match in song length. This results in a list of distances between each classified point and the test song and the classified points genre label. The kNN 'vote' is now performed by sorting this list by the distance results and filtering the list to k records. The majority vote is calculated by tallying the resulting labels in the list. The label of the majority vote winner is placed as the genre of the test song.
 
 ## Performance
-With much room for improvement (and ignoring statistical bias or musical opinions), the results were okay, correctly classifying 75% of the testing songs. It was surprising to me how poorly the algorithm worked before adding a control for the length of songs. With a very small sample size per training label, there wasn't enough information to capture the essence of a genre based solely off of the word vectors (true for stemmed and unstemmed tests). The length of a song acted as a good supporting indicator of which style of music a song is. Interestingly, it was not good alone, I found equally poor results focusing only on song length. The Euclidean distance and word length penalty supported each other in the calculation.
+With much room for improvement (and ignoring statistical bias or musical opinions), the results were okay, correctly classifying 75% of the testing songs. It was surprising to me how poorly the algorithm worked before adding a control for the length of songs. With a very small sample size per training label, there wasn't enough information to capture the essence of a genre based solely off of the word vectors (true for stemmed and unstemmed tests). The length of a song acted as a good supporting indicator of which style of music a song is. Interestingly, it was not good alone, I found equally poor results focusing only on song length. The Euclidean distance and word length penalty supported each other nicely in the final calculation.
 
 We had to make several attempts find an appropriate way to weigh these factors in the calculation. One problem was that genres with very long or very short word counts would scale the distance too far, or not far enough, when multiplied by the word distance. For example, the hip-hop training songs have significantly more words than any other genre, so song length ratios including hip-hop songs were heavily skewed by this. Simply adding the squared difference in word length was effective at tuning the calculation.
 
