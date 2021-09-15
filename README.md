@@ -42,7 +42,7 @@ We ignored an extensive opportunity to see if statistical methods would make a b
 
 There is so much opportunity to use other language processing tools to make more meaningful vector spaces. For instance, we could compare pairs of words used in songs rather individual words. 
 Is there a way we could detect rhyming in hip-hop, for example? We could take a different approach to our vector space and try a completely different model. Namely, GloVe, Word2vec, or fastText
-are all very interesting and could be used to create a mapping of the relationships between song lyrics. There is no shortage of opportunity.
+are all very interesting and could be used to create a mapping of the relationships between song lyrics.
 
 ## References
 [1] "Dropping common terms: stop words." https://nlp.stanford.edu/IR-book/html/htmledition/dropping-common-terms-stop-words-1.html  
