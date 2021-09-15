@@ -6,7 +6,7 @@ import sys
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
-from operator import itemgetter 
+from operator import itemgetter
 from os import listdir
 from os.path import isfile, join
 
@@ -31,11 +31,11 @@ def remove_punctuation_stop_words_and_stem(text):
     stop_words_set = set(stopwords.words('english'))
     stop_words = []
 
-    for s in stop_words_set: 
+    for s in stop_words_set:
         s = regex.sub(r'[^\w\s]', '',s)
         stop_words.append(s)
 
-    song_words = text.split() 
+    song_words = text.split()
     song_no_stop_words = [word for word in song_words if word not in stop_words]
 
     porter = PorterStemmer() # PorterStemmer avoids over-stemming words relative to other stemming algorithms
@@ -43,7 +43,7 @@ def remove_punctuation_stop_words_and_stem(text):
     text= ' '.join(stemmed_word_list)
 
     return text
-    
+
 def file_list(folder):
     return [f for f in listdir(folder) if isfile(join(folder, f))]
 
@@ -105,9 +105,9 @@ def get_genre_avg_length(tag):
 
 def file_to_stemmed_word_list(f):
     fr        = open(f, 'r')
-    text_read = fr.read() 
+    text_read = fr.read()
     text      = remove_punctuation_stop_words_and_stem(text_read)
-    
+
     return text.split()
 
 def get_vocabularies(all_files):
@@ -121,23 +121,23 @@ def get_vocabularies(all_files):
 
 def load_training_data():
     all_files = all_file_list()
-    voc = get_vocabularies(all_files) 
-     
+    voc = get_vocabularies(all_files)
+
     training_data = []
 
     for f in all_files:
         tag   = f.split('/')[1]
-        point = copy.deepcopy(voc) 
-        words = file_to_stemmed_word_list(f) 
+        point = copy.deepcopy(voc)
+        words = file_to_stemmed_word_list(f)
         genre_average = get_genre_avg_length(tag)
- 
-        for w in words:
-            point[w] += 1 
 
-        d = {'tag':tag, 'point':point, 'genre_avg':genre_average}  
+        for w in words:
+            point[w] += 1
+
+        d = {'tag':tag, 'point':point, 'genre_avg':genre_average}
         training_data.append(d)
 
-    return training_data 
+    return training_data
 
 def get_distance(p1, p2):
     sq_sum = 0
@@ -156,9 +156,9 @@ def test(training_data, txt_file):
     item      = {}
     max_i     = 0
 
-    words = file_to_stemmed_word_list(txt_file) 
+    words = file_to_stemmed_word_list(txt_file)
     unstemmed_test_song_word_count = count_words(txt_file)
-   
+
     for w in words:
         if w in txt:
             txt[w] += 1
@@ -169,28 +169,30 @@ def test(training_data, txt_file):
         item['tag'] = pt['tag']
         item['genre_avg'] = pt['genre_avg']
         item['distance'] = get_distance(pt['point'], txt) + (unstemmed_test_song_word_count - item['genre_avg'])**2 # Penalizes songs that are too long or short for the genre
-        
+
         dist_list.append(copy.deepcopy(item))
 
     dist_list = sorted(dist_list, key=itemgetter('distance'))
 
     neighbors = dist_list[:k]
-    
+
     vote_result = {}
     for d in dist_list:
         if d['tag'] in vote_result:
             vote_result[d['tag']] += 1
         else:
             vote_result[d['tag']]  = 1
-   
+
     result = dist_list[0]['tag']
     for vote in vote_result: # Calculates the majority vote
         if vote_result[vote] > vote_result[result]:
             result = vote
 
     return result
-        
+
 def main():
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
     td = load_training_data()
     test_files = file_list(test_folder)
 
